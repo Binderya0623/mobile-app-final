@@ -1,0 +1,18 @@
+[
+    {
+      "id": 1,
+      "username": "binderya",
+      "password": "kkkkkk",
+      "email": "tssbinderya@gmail.com",
+      "name": { "firstname": "Bindertsetseg", "lastname": "Tseden-Ish" },
+      "address": {
+        "geolocation": { "lat": "0", "long": "0" },
+        "city": "Ulaanbaatar",
+        "street": "Peace Avenue",
+        "number": 10,
+        "zipcode": "14140"
+      },
+      "image": "https://avatars.githubusercontent.com/u/122585383?v=4",
+      "phone": "+976-94550623"
+    }
+  ]  
