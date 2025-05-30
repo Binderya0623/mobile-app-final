@@ -54,5 +54,8 @@ const Map<String, String> en = {
   'reviewContent': 'Review content', 
   'rating': 'Rating', 
   'fillAllFields': 'Fill all fields', 
-  'submitReview': 'Submit review'
+  'submitReview': 'Submit review',
+  'signUpButton': 'Sign up',
+  'confirmPassword': 'Confirm password',
+  'alreadyHaveAccount': 'Already have an account?'
 }; 

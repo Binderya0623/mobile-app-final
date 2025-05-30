@@ -12,7 +12,7 @@ const Map<String, String> mn = {
   'my_bag': 'Миний сагс',
   'login': 'Нэвтрэх',
   'emailOrUsername': 'Имэйл эсвэл хэрэглэгчийн нэр',
-  'noAccount': 'Бүтгэлгүй бол:',
+  'noAccount': 'Бүтгэлгүй юу?',
   'signUp':'Бүртгүүлэх',
   'username': 'Хэрэглэгчийн нэр',
   'password': 'Нууц үг',
@@ -55,5 +55,8 @@ const Map<String, String> mn = {
   'reviewContent': 'Сэтгэгдэл', 
   'rating': 'Үнэлгээ', 
   'fillAllFields': 'Бүх талбарыг дүүргэх', 
-  'submitReview': 'Сэтгэгдлийг илгээх'
+  'submitReview': 'Сэтгэгдлийг илгээх',
+  'signUpButton': 'Бүртгүүлэх',
+  'confirmPassword': 'Нууц үгээ давтан оруулах',
+  'alreadyHaveAccount': 'Бүртгэлтэй юу?'
 }; 

@@ -80,7 +80,6 @@ class _SignUpPageState extends State<SignUpPage> {
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                       labelText: languageProvider.translate('email'),
-                      hintText: languageProvider.translate('enterEmail'),
                       prefixIcon: const Icon(Icons.email),
                     ),
                     validator: (value) {
@@ -96,7 +95,6 @@ class _SignUpPageState extends State<SignUpPage> {
                     obscureText: !_isPasswordVisible,
                     decoration: InputDecoration(
                       labelText: languageProvider.translate('password'),
-                      hintText: languageProvider.translate('enterPassword'),
                       prefixIcon: const Icon(Icons.lock),
                       suffixIcon: IconButton(
                         icon: Icon(
@@ -122,7 +120,6 @@ class _SignUpPageState extends State<SignUpPage> {
                     obscureText: !_isPasswordVisible,
                     decoration: InputDecoration(
                       labelText: languageProvider.translate('confirmPassword'),
-                      hintText: languageProvider.translate('reEnterPassword'),
                       prefixIcon: const Icon(Icons.lock_outline),
                     ),
                     validator: (value) {

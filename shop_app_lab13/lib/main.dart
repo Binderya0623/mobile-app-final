@@ -4,10 +4,10 @@ import 'package:shop_app_lab13/provider/global_provider.dart';
 import 'screens/home_page.dart';
 import 'screens/login_page.dart';
 import 'screens/signup_page.dart';
+import 'screens/splash_screen.dart';
 import 'services/httpService.dart';
 import 'repository/repository.dart';
 import 'provider/language_provider.dart';
-
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized(); 
@@ -32,12 +32,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Shop',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: '/',
+      initialRoute: '/splash',
       routes: {
+        '/splash': (context) => const SplashScreen(),
         '/': (context) => HomePage(),
         '/login': (context) => const LoginPage(),
         '/signup': (context) => const SignUpPage()
@@ -45,4 +47,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

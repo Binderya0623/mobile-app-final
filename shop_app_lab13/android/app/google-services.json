@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "728859450594",
+    "project_id": "bindy-firebase",
+    "storage_bucket": "bindy-firebase.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:728859450594:android:64f4c19169946d843b52bb",
+        "android_client_info": {
+          "package_name": "com.example.gtk_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7dhORA-1eudaWnJPl98Fj0QZm5Xh2XhI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:728859450594:android:db0b2c0e83ce9c2c3b52bb",
+        "android_client_info": {
+          "package_name": "com.example.shop_app_lab13"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7dhORA-1eudaWnJPl98Fj0QZm5Xh2XhI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
