@@ -4,8 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart' hide EmailAuthProvider, PhoneA
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'firebase_options.dart';
-import '../models/cart_model.dart';
+import '../firebase_options.dart';
 import '../models/product_model.dart';
 import '../models/review_model.dart';
 import '../models/user_model.dart';
@@ -67,7 +66,8 @@ class GlobalProvider extends ChangeNotifier {
         options: DefaultFirebaseOptions.currentPlatform,
       );
       
-      // Initialize services AFTER Firebase is initialized
+      // ehleed Firebase init hiigdeh yostoi
+      // ugui bol DEADLOCK
       _auth = FirebaseAuth.instance;
       _firestore = FirebaseFirestore.instance;
       _firebaseMessaging = FirebaseMessaging.instance;
@@ -120,6 +120,7 @@ class GlobalProvider extends ChangeNotifier {
     
     await _firebaseMessaging!.requestPermission();
     _messagingToken = await _firebaseMessaging!.getToken();
+    debugPrint('FCM: $_messagingToken');
     
     if (_messagingToken != null) {
       await _firestore!

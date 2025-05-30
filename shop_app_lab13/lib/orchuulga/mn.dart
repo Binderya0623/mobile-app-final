@@ -50,13 +50,17 @@ const Map<String, String> mn = {
   'noDisplayName': 'Нэр харуулахгүй',
   'reviews': 'Сэтгэгдлүүд', 
   'no_reviews': 'Сэтгэгдэл хоосон байна',
-  'writeReview': 'Сэтгэгдэл бичих', 
-  'reviewTitle': 'Сэтгэгдэл', 
+  'writeReview': 'Сэтгэгдэл бичих хэсэг', 
+  'reviewTitle': 'Гарчиг', 
   'reviewContent': 'Сэтгэгдэл', 
   'rating': 'Үнэлгээ', 
-  'fillAllFields': 'Бүх талбарыг дүүргэх', 
+  'fillAllFields': 'Бүх талбарыг дүүргэнэ үү.', 
   'submitReview': 'Сэтгэгдлийг илгээх',
   'signUpButton': 'Бүртгүүлэх',
   'confirmPassword': 'Нууц үгээ давтан оруулах',
-  'alreadyHaveAccount': 'Бүртгэлтэй юу?'
+  'alreadyHaveAccount': 'Бүртгэлтэй юу?',
+
+  'pleaseLoginToViewReviews': 'Та эхлээд нэвтэрнэ үү.',
+  'pleaseLoginToWriteReview': 'Та эхлээд нэвтэрнэ үү.',
+  'pleaseLoginToAddToCart': 'Та эхлээд нэвтэрнэ үү.'
 }; 

@@ -1,7 +1,4 @@
-// lib/models/product_model.dart
-
 import 'package:json_annotation/json_annotation.dart';
-
 part 'product_model.g.dart';
 
 @JsonSerializable()
@@ -14,9 +11,7 @@ class ProductModel {
   final String? image;
   final Rating? rating;
 
-  /// This flag is only used client‐side to mark a product as “favorite.”
-  /// We don't want json_serializable to include it when (de)serializing JSON
-  /// from the FakeStore API, so we ignore it there.
+  // Ene hesgiig ashiglahgui
   @JsonKey(ignore: true)
   bool isFavorite;
 
@@ -30,43 +25,22 @@ class ProductModel {
     this.rating,
     this.isFavorite = false,
   });
-
-  // ───────────────────────────────────────────────────────────────────────────
-  // 1) JSON (FakeStore API) ↔ ProductModel
-  // ───────────────────────────────────────────────────────────────────────────
-
-  /// Create a ProductModel from JSON (as returned by fakestoreapi.com).
+  // from JSON - fakestoreapi.com
   factory ProductModel.fromJson(Map<String, dynamic> json) =>
       _$ProductModelFromJson(json);
-
-  /// Convert this ProductModel into JSON (for POST/PUT, if needed).
+  // ProductModel --> JSON
   Map<String, dynamic> toJson() => _$ProductModelToJson(this);
-
-  /// Helper: convert a raw JSON array into a list of ProductModel.
+  // JSON array --> list of ProductModel
   static List<ProductModel> fromList(List<dynamic> jsonList) {
     return jsonList
         .map((json) => ProductModel.fromJson(json as Map<String, dynamic>))
         .toList();
   }
-
   double get safePrice => price ?? 0.0;
 
   // ───────────────────────────────────────────────────────────────────────────
-  // 2) Firestore Map ↔ ProductModel
+  // Firestore Map <---> ProductModel
   // ───────────────────────────────────────────────────────────────────────────
-
-  /// Create a ProductModel from a Firestore document’s data map.
-  /// Assumes Firestore stored exactly these fields:
-  /// {
-  ///   'id': <int>,
-  ///   'title': <String>,
-  ///   'price': <double>,
-  ///   'description': <String>,
-  ///   'category': <String>,
-  ///   'image': <String>,
-  ///   'rating': { 'rate': <double>, 'count': <int> },   // optional
-  ///   'isFavorite': <bool>
-  /// }
   factory ProductModel.fromMap(Map<String, dynamic> map) {
     return ProductModel(
       id: (map['id'] as num?)?.toInt(),
@@ -78,13 +52,13 @@ class ProductModel {
       rating: map['rating'] != null
           ? Rating.fromMap(Map<String, dynamic>.from(map['rating'] as Map))
           : null,
-      // isFavorite is stored in Firestore, so read it here
+      // isFavorite-iig firestore deer hadgalsan tul unshina
       isFavorite: map['isFavorite'] as bool? ?? false,
     );
   }
 
-  /// Convert this ProductModel into a map so you can store it in Firestore.
-  /// This does not use json_serializable, since we want to include isFavorite.
+  // ProductModel --> map for Firestore
+  // ingesneer Firestore-d hadgalj chadna
   Map<String, dynamic> toMap() {
     return {
       'id': id,
@@ -103,22 +77,19 @@ class ProductModel {
 class Rating {
   final double? rate;
   final int? count;
-
   Rating({this.rate, this.count});
-
-  /// JSON → Rating for FakeStore API
+  // JSON --> Rating for FakeStore API
   factory Rating.fromJson(Map<String, dynamic> json) =>
       _$RatingFromJson(json);
 
-  /// Rating → JSON (if you ever POST/PUT)
+  /// Rating --> JSON
   Map<String, dynamic> toJson() => _$RatingToJson(this);
 
   // ───────────────────────────────────────────────────────────────────────────
-  // Firestore Map ↔ Rating
+  // Firestore map <---> Rating
   // ───────────────────────────────────────────────────────────────────────────
 
-  /// Create a Rating from a Firestore-stored map:
-  /// { 'rate': <double>, 'count': <int> }
+  // Rating hesgiig uusgeh
   factory Rating.fromMap(Map<String, dynamic> map) {
     return Rating(
       rate: (map['rate'] as num?)?.toDouble() ?? 0.0,
@@ -126,7 +97,7 @@ class Rating {
     );
   }
 
-  /// Convert this Rating into a map for Firestore.
+  // Rating --> map for Firestore
   Map<String, dynamic> toMap() {
     return {
       'rate': rate,

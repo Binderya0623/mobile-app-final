@@ -4,7 +4,6 @@ class UserModel {
   final String displayName;
   final String photoUrl;
   final String? fcmToken;
-
   UserModel({
     required this.uid,
     required this.email,
@@ -12,7 +11,6 @@ class UserModel {
     this.photoUrl = '',
     this.fcmToken,
   });
-
   Map<String, dynamic> toMap() {
     return {
       'uid': uid,
@@ -22,7 +20,6 @@ class UserModel {
       if (fcmToken != null) 'fcmToken': fcmToken,
     };
   }
-
   factory UserModel.fromMap(Map<String, dynamic> map) {
     return UserModel(
       uid: map['uid'] as String,

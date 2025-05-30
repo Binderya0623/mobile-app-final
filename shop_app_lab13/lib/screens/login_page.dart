@@ -1,5 +1,3 @@
-// lib/screens/login_page.dart
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -41,12 +39,10 @@ class _LoginPageState extends State<LoginPage> {
     );
 
     if (provider.error != null) {
-      // Show FirebaseAuth error message
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(provider.error!)),
       );
     } else if (provider.isLoggedIn) {
-      // On successful login, navigate to home ("/")
       Navigator.pushReplacementNamed(context, '/');
     }
   }

@@ -5,7 +5,6 @@ class ReviewModel {
   final String content;
   final double rating;
   final int timestamp;
-
   ReviewModel({
     required this.userId,
     required this.userName,
@@ -14,7 +13,6 @@ class ReviewModel {
     required this.rating,
     required this.timestamp,
   });
-
   Map<String, dynamic> toMap() {
     return {
       'userId': userId,
@@ -25,7 +23,6 @@ class ReviewModel {
       'timestamp': timestamp,
     };
   }
-
   factory ReviewModel.fromMap(Map<String, dynamic> map) {
     return ReviewModel(
       userId: map['userId'] as String,

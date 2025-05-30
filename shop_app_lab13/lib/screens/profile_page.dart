@@ -1,5 +1,3 @@
-// lib/screens/profile_page.dart
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -14,18 +12,10 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer2<GlobalProvider, LanguageProvider>(
       builder: (context, provider, languageProvider, child) {
-        // If not logged in, show the LoginPage exactly as before
         if (!provider.isLoggedIn) return const LoginPage();
 
-        // Grab the Firebase-backed user model (only has email & displayName)
+        // Firebase backed-ees user model avah
         final userModel = provider.currentUserModel!;
-
-        // Since our UserModel doesn’t yet have phone/address/name fields,
-        // we’ll just display empty strings there for now.
-        //
-        // The layout below is byte-for-byte what you showed originally:
-        // - A Card with four _buildRowItem rows (email, phone, address, full name)
-        // - Same icons, same SizedBox spacers, same Card padding, etc.
 
         return Scaffold(
           backgroundColor: Colors.white,
@@ -54,7 +44,7 @@ class ProfilePage extends StatelessWidget {
                     padding: const EdgeInsets.all(16),
                     child: Column(
                       children: [
-                        // ─── Email Row ─────────────────────────────────────
+                        // email
                         _buildRowItem(
                           icon: Icons.email,
                           label: languageProvider.translate('email'),
@@ -62,23 +52,7 @@ class ProfilePage extends StatelessWidget {
                         ),
                         const SizedBox(height: 12),
 
-                        // ─── Phone Row (empty for now) ────────────────────
-                        _buildRowItem(
-                          icon: Icons.phone,
-                          label: languageProvider.translate('phone'),
-                          value: '', // no phone in this UserModel yet
-                        ),
-                        const SizedBox(height: 12),
-
-                        // ─── Address Row (empty for now) ──────────────────
-                        _buildRowItem(
-                          icon: Icons.location_on,
-                          label: languageProvider.translate('address'),
-                          value: '', // no address in this UserModel yet
-                        ),
-                        const SizedBox(height: 12),
-
-                        // ─── Full Name Row (using displayName) ─────────────
+                        // name
                         _buildRowItem(
                           icon: Icons.person,
                           label: languageProvider.translate('full_name'),
@@ -86,7 +60,7 @@ class ProfilePage extends StatelessWidget {
                         ),
                         const SizedBox(height: 20),
 
-                        // ─── Language Selector ────────────────────────────
+                        // language
                         Row(
                           children: [
                             Container(
@@ -128,7 +102,7 @@ class ProfilePage extends StatelessWidget {
                         ),
                         const SizedBox(height: 20),
 
-                        // ─── Logout Button ────────────────────────────────
+                        // logout
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton.icon(

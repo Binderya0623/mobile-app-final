@@ -1,5 +1,3 @@
-// lib/screens/signup_page.dart
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -39,16 +37,14 @@ class _SignUpPageState extends State<SignUpPage> {
     await provider.registerWithEmailPassword(
       email: email,
       password: password,
-      displayName: email.split('@')[0], // or any default display name logic
+      displayName: email.split('@')[0],
     );
 
     if (provider.error != null) {
-      // Show error message
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(provider.error!)),
       );
     } else if (provider.isLoggedIn) {
-      // On successful signup, navigate to home ("/")
       Navigator.pushReplacementNamed(context, '/');
     }
   }

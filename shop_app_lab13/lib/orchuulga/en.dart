@@ -57,5 +57,9 @@ const Map<String, String> en = {
   'submitReview': 'Submit review',
   'signUpButton': 'Sign up',
   'confirmPassword': 'Confirm password',
-  'alreadyHaveAccount': 'Already have an account?'
+  'alreadyHaveAccount': 'Already have an account?',
+
+  'pleaseLoginToViewReviews': 'Please log in to see reviews',
+  'pleaseLoginToWriteReview': 'Please log in to write a review',
+  'pleaseLoginToAddToCart': 'Please log in to add to cart'
 }; 

@@ -19,8 +19,6 @@ class _SplashScreenState extends State<SplashScreen> {
   Future<void> _initializeApp() async {
     final globalProvider = context.read<GlobalProvider>();
     await globalProvider.initializeFirebase();
-    
-    // Add slight delay for smoother transition
     await Future.delayed(const Duration(milliseconds: 500));
     
     if (mounted) {
